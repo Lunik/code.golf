@@ -28,8 +28,5 @@ jobs:
     - name: Install requirements
       run: make install
 
-    - name: Lint
-      run: make lint
-
     - name: Launch tests
       run: make test

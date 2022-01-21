@@ -1,0 +1,2 @@
+
+OUTPUT_PATH = "/tmp"

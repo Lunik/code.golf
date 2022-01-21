@@ -1,6 +1,5 @@
 PY       ?= python3
 VENV_PY  ?= venv/bin/python3
-PYLINT   ?= venv/bin/pylint
 PYTEST   ?= venv/bin/pytest
 
 VENV         ?= venv
@@ -11,7 +10,6 @@ PROJECT_NAME = code.golf
 HTML_STATIC_PATH = static
 HTML_REPORT_PATH = docs
 
-PYLINT_OPTS = --extension-pkg-allow-list="math"
 PYTEST_OPTS = --durations=0 -v -n 4 --color=yes
 
 install: env
@@ -20,10 +18,7 @@ install: env
 env:
 	${PY} -m venv "${VENV}"
 
-all: test render lint
-
-lint:
-	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYLINT} ${PYLINT_OPTS} solutions/
+all: test render
 
 test:
 	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/index.html" tests/
