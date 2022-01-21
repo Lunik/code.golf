@@ -27,3 +27,9 @@ lint:
 
 test:
 	PYTHONPATH="${_PYTHONPATH}:${PYTHONPATH}" ${PYTEST} ${PYTEST_OPTS} --html="${HTML_REPORT_PATH}/index.html" tests/
+
+new:
+	test -n ${name} \
+	&& echo ${name} \
+	&& cp -r solutions/skeleton solutions/${name} \
+	&& cp -r tests/solutions/skeleton tests/solutions/${name}
