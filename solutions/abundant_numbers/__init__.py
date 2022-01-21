@@ -2,10 +2,10 @@ import os
 import cProfile
 import pstats
 
-# Score : 90 bytes, 90 chars
+# Score : 79 bytes, 79 chars
 def main():
   for i in range(1,201):
-    (lambda _:_,print)[sum([(j,0)[i%j!=0] for j in range(1,i)])>i](i)
+    if sum([j for j in range(1,i) if i%j==0])>i:print(i)
 
 
 if __name__ == "__main__":
