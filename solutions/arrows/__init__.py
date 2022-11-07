@@ -2,7 +2,7 @@ import os
 import cProfile
 import pstats
 
-# Score : 274 bytes, 214 chars
+# Score : 269 bytes, 209 chars
 def main():
   import sys
   p=print
@@ -11,9 +11,7 @@ def main():
   _=" "*4
   b=f"↙←↖↓↔↑↘→↗↲⇐↰⇓↕⇑↳⇒↱⇙⇦⇖⇩⇔⇧⇘⇨⇗{_}⇕{_*2}⥀{_*2}⥁"
   s=(0,0)
-  for arg in sys.argv[1:]:
-    s=tuple(map(sum,zip(s,a[b.index(arg)%9])))
-    p("%s %s"%s)
+  for arg in sys.argv[1:]:s=tuple(map(sum,zip(s,a[b.index(arg)%9])));p("%s %s"%s)
 
 
 if __name__ == "__main__":
